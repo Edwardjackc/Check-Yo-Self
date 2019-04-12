@@ -1,8 +1,32 @@
+html {
+  min-height: 100%;
+}
 * {
-border
+box-sizing : border-box;
+border: 1px solid black;
 };
 
+
+/* ------------- Header --------- */ 
+header {
+background-color: #1F1F3D; 
+};
+
+h1 {
+  color:#ffffff
+};
+
+span {
+  color:#FEC40E
+};
+
+form {
+
+};
 /* ------------- Body ----------- */ 
+
+
+
 
 /* ------------- Main ----------- */
 
