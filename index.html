@@ -4,30 +4,50 @@
     <meta charset="UTF-8">
     <title>Check'YoSelf!</title>
     <meta name = "viewport" content ="width=device-width", initial-scale=1.0">
-    <link rel="stylesheet" type ="text/css" href="styles.css">
-    <link rel="stylesheet" type = "text/css" href="normalize">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
     <header>
-      <h1>Check Yo'Self </h1>
-      <form>
-        <input> 
-      </form>
+      <h1>Check <span>YO'</span> Self </h1>
+        <input type ="input__header" name="search" class="input__header--search"> 
     </header>
     <main>
-      <div clas= "test card"> 
-        <h2>Task Title </h2>
-      </div>
+      <aside>
+        <form class="aside__form--input">
+          <label>Task Title</label>
+          <input type="text" class="input__aside" name="to-do" type="text">
+<!-- insert inner html here and have it expand -->
+          <label>Task Item</label>
+          <input type="type" class="input__aside" name="to-do" type="text">
+        </form>
+        <form class="aside__form--task">
+          <button class="btn__aside--task">Make Task List</button>
+          <button class="btn__aside--task">Clear All</button>
+          <button class="btn__aside--task">Filter by Urgency</button>
+        </form>
+      </aside>
+      <section class="list__section__container">
+        <!-- <template> -->
+          <article class="inactive__card">
+          <section class="card__header">
+            <h3>Task Title</h3>
+          </section>
+            <ul>
+              <input class="todo__card--radio" type="radio">
+              <input class="todo__card--radio" type="radio">
+            </ul>
+          <section class="card__footer">
+            <input type="image" alt="btn-mark-card-urgent" src="images/urgent.svg"width=15px color="3c6577">
+            <input type="image" alt="btn-delete-card" src="images/delete.svg" width=15px color="#3c6577"
+            width=10px>
+          </section>
+          </article>
+        <!-- </template> -->
+      </section>
     </main>
-    <aside>
-      <form class="input__aside">
-        <input type ="text" name="to-do" class="input__aside--Title" type="text" >
-        <input type="type" name="to-do" class="input__aside--Item">
-        <button>Make Task List</button>
-        <button>Clear All</button>
-        <button>Filter by Urgency</button>
-        <hr> 
-      </form>
-    </aside>
+  <script type="text/javascript" src="todo-list.js"></script>
+  <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
