@@ -4,30 +4,34 @@
     <meta charset="UTF-8">
     <title>Check'YoSelf!</title>
     <meta name = "viewport" content ="width=device-width", initial-scale=1.0">
-    <link rel="stylesheet" type ="text/css" href="styles.css">
-    <link rel="stylesheet" type = "text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
     <header>
-      <h1>Check <span>YO</span> Self </h1>
-      <form>
-        <input type ="input__header" name "search" class="input__header--search"> 
-      </form>
+      <h1>Check <span>YO'</span> Self </h1>
+        <input type ="input__header" name="search" class="input__header--search"> 
     </header>
     <main>
-      <div clas= "test card"> 
-        <h2>Task Title </h2>
-      </div>
+      <aside>
+        <form class="aside__form--input">
+          <label>Task Title</label>
+          <input type="text" class="input__aside--title" name="to-do" type="text">
+<!-- insert inner html here and have it expand -->
+          <label>Task Item</label>
+          <input type="type" class="input__aside--item" name="to-do" type="text">
+        </form>
+        <form class="aside__form--task">
+          <button class="btn__aside--task">Make Task List</button>
+          <button class="btn__aside--task">Clear All</button>
+          <button class="btn__aside--task">Filter by Urgency</button>
+        </form>
+      </aside>
+      <section>
+        <article></article>
+        <article></article>
+      </section>
     </main>
-    <aside>
-      <form class="input__aside">
-        <input type ="text" name="to-do" class="input__aside--Title" type="text" >
-        <input type="type" name="to-do" class="input__aside--Item">
-        <button>Make Task List</button>
-        <button>Clear All</button>
-        <button>Filter by Urgency</button>
-        <hr> 
-      </form>
-    </aside>
   </body>
 </html>
