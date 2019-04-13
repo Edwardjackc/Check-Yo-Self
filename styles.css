@@ -19,7 +19,7 @@ height:10%;
 header input{
 height:30px;
 width:220px;
-margin:20px
+margin:20px 15px;
 }
 
 h1 {
@@ -46,17 +46,24 @@ aside {
   width:30%;
 }
 
+form{
+margin:8px
+}
+
+label {
+  font-weight:400;
+  margin-bottom:2px
+}
 .aside__form--input{
   display:flex;
   flex-direction:column;
-  margin:10px;
   align-content: space-around;
 }
 
 .aside__form--task {
   display: flex;
   flex-direction:column;
-  margin:50px 10px;
+  margin-top:50px;
 }
 
 .btn__aside--task {
