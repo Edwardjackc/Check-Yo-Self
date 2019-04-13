@@ -1,15 +1,15 @@
 class List {
-  constructor() {
+  constructor(id, title, urgent, tasks) {
     this.id = id; 
     this.title = title;
     this.urgent = urgent || false;
-    this.tasks = task || 0
+    this.tasks = tasks || 0;
   }
 
-  saveToStorage() {
-    var stringTasks = JSON.stringify(globalArray);
+saveToStorage() {
+    var stringedTasks = JSON.stringify(globalArray);
     localStorage.setItem(
-    'updateMetoTaskSaved', stringTasks);
+    'savedList', stringedTasks);
   }
 }
 
