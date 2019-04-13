@@ -41,32 +41,41 @@ main {
 }
 
 h3 {
-  font-size:.6em;
-  margin:0;
+  font-size:.9em;
+  margin:6px;
+}
+
+.list__section__container {
+  width:75%;
 }
 
 .inactive__card {
 display:flex;
 flex-flow: column;
 border:1px solid #c7d3d8;
-color:#1f1f3d
+color:#1f1f3d;
+width:300px;
+margin:20px;
 }
 
 .card__header {
 border-bottom:1px solid #c7d3d8;
+height:30px;
 }
 
 .card__footer {
 display:flex;
 justify-content: space-between;
-height:15px;
+height:30px;
 border-top: solid 1px #c7d3d8;
+padding:4px
 }
+
 
 /* ------------- Aside ---------- */
 aside {
   background-color:#5878A8;
-  width:30%;
+  width:25%;
 }
 
 form{
@@ -75,23 +84,35 @@ margin:8px
 
 label {
   font-weight:400;
-  margin-bottom:2px;
+  margin-bottom:4px;
   font-size:.8em;
+  color: #c7d3d8;
 }
 
 .aside__form--input{
   display:flex;
   flex-direction:column;
   align-content: space-around;
+  margin-top:20px; 
 }
 
-.aside__form--task {
+.aside__form--input {
   display: flex;
   flex-direction:column;
-  margin-top:50px;
+  margin-top:20px;
+} 
+
+.input__aside {
+  height:30px;
+}
+.aside__form--task {
+display:flex;
+flex-direction: column;
+margin-top:80px;
 }
 
 .btn__aside--task {
   background-color:#1f1f3d;
   color:#ffffff;
+  height:30px;
 }

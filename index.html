@@ -17,10 +17,10 @@
       <aside>
         <form class="aside__form--input">
           <label>Task Title</label>
-          <input type="text" class="input__aside--title" name="to-do" type="text">
+          <input type="text" class="input__aside" name="to-do" type="text">
 <!-- insert inner html here and have it expand -->
           <label>Task Item</label>
-          <input type="type" class="input__aside--item" name="to-do" type="text">
+          <input type="type" class="input__aside" name="to-do" type="text">
         </form>
         <form class="aside__form--task">
           <button class="btn__aside--task">Make Task List</button>
@@ -28,7 +28,7 @@
           <button class="btn__aside--task">Filter by Urgency</button>
         </form>
       </aside>
-      <section>
+      <section class="list__section__container">
         <!-- <template> -->
           <article class="inactive__card">
           <section class="card__header">
@@ -39,9 +39,9 @@
               <input class="todo__card--radio" type="radio">
             </ul>
           <section class="card__footer">
-            <input type="image" src='images/urgent.svg' width=15px color="3c6577">
-            <input type="image" src='images/delete.svg' color="#3c6577"
-            width=15px>
+            <input type="image" alt="btn-mark-card-urgent" src="images/urgent.svg"width=15px color="3c6577">
+            <input type="image" alt="btn-delete-card" src="images/delete.svg" width=15px color="#3c6577"
+            width=10px>
           </section>
           </article>
         <!-- </template> -->
