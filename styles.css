@@ -1,34 +1,55 @@
-html {
-  min-height: 100%;
-}
 * {
-box-sizing : border-box;
-border: 1px solid black;
-};
-
-
+  box-sizing : border-box;
+  border: 1px solid black;
+}
+/* ------------- Body ----------- */
+body {
+  height:100vh;
+  font-family:open-sans;
+}
 /* ------------- Header --------- */ 
 header {
-background-color: #1F1F3D; 
-};
+background-color: #1F1F3D;
+grid-area: header;
+}
 
 h1 {
-  color:#ffffff
-};
+  color:#ffffff;
+  width:300px;
+}
 
 span {
-  color:#FEC40E
-};
+  color:#FEC40E;
+}
 
-form {
-
-};
-/* ------------- Body ----------- */ 
-
-
-
+.input {
+  background-color:#1F1F3D;
+}
 
 /* ------------- Main ----------- */
+main {
+  display:flex;
+  height:100%;
+  background-color:#f3f6f7;
+}
+
 
 /* ------------- Aside ---------- */
+aside {
+  background-color:#5878A8;
+  width:30%;
+}
 
+.input__aside {
+  display:flex;
+  flex-direction:column;
+  margin:10px
+}
+
+.input__btn {
+  display: flex;
+  flex-direction:column;
+  margin:50px 10px;
+  background-color:#1f1f3d;
+  color:#ffffff;
+}
