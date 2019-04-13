@@ -55,6 +55,7 @@ label {
   margin-bottom:2px;
   font-size:.8em;
 }
+
 .aside__form--input{
   display:flex;
   flex-direction:column;
@@ -79,10 +80,8 @@ label {
 margin-top:50px;
 }
 
-.card{
-
-}
-
-.card__urgent {
-
+.inactive__card {
+display:flex;
+flex-direction: column;
+justify-content: center;
 }
