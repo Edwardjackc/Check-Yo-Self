@@ -52,8 +52,10 @@ margin:8px
 
 label {
   font-weight:400;
-  margin-bottom:2px
+  margin-bottom:2px;
+  font-size:.8em;
 }
+
 .aside__form--input{
   display:flex;
   flex-direction:column;
@@ -69,4 +71,10 @@ label {
 .btn__aside--task {
   background-color:#1f1f3d;
   color:#ffffff;
+}
+
+.inactive__card {
+display:flex;
+flex-direction: column;
+justify-content: center;
 }
