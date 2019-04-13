@@ -1,6 +1,6 @@
-* {
+/* * {
   border: 1px solid red;
-}
+} */
 /* ------------- Body ----------- */
 body {
   height:100vh;
@@ -68,9 +68,16 @@ label {
   margin-top:50px;
 }
 
-.btn__aside--task {
+.aside__btn--task {
   background-color:#1f1f3d;
   color:#ffffff;
+  padding:2px;
+  margin:5px 0px;
+  border: 2px solid #1F1F3D
+}
+
+.btn-urgent {
+margin-top:50px;
 }
 
 .inactive__card {
