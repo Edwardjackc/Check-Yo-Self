@@ -1,13 +1,14 @@
-var titleInput = document.querySelector('.input__aside--title');
+var taskTitleInput = document.querySelector('.input__aside--title');
 var taskInput = document.querySelector('.input__aside--task');
+var btnSubmitTask = document.querySelector('.btn__aside__task--append')
 var itemListContainer = document.querySelector('.item__container--to-do');
-var makeList = document.querySelector('.btn__list--make');
+var btnMakeList = document.querySelector('.btn__list--make');
 var clearAll = document.querySelector('.btn--list--clear');
 var filterUrgency = document.querySelector('.btn--list--filter');
 var listContainer = document.querySelector('.list__section__container')
 
 // titleInput.addEventListener();
-taskInput.addEventListener('input', appendListItems);
+btnSubmitTask.addEventListener('click', appendListItems);
 // appendListItems.addEventListener('click',);
 // makeList.addEventListener('click',)
 // clearAll.addEventListener('click', );
@@ -68,10 +69,11 @@ taskInput.addEventListener('input', appendListItems);
 // }
 
 function appendListItems() {
+  event.preventDefault();
   itemListContainer.innerHTML = 
   ` <li class="list__task">
       <input class="task__form--items" type='button' svg='images/delete.svg'>
-      <p>
+      <p>${taskInput.value}
       </p>
       </input>
     </li>
