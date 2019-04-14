@@ -3,7 +3,7 @@ class ToDoList {
     this.id = id; 
     this.title = title;
     this.urgent = urgent || false;
-    this.tasks = tasks || 0;
+    this.tasks = [id:id,name:tasks, completed:false] || 0;
   }
 
 saveToStorage() {
@@ -14,10 +14,9 @@ saveToStorage() {
 }
 
 deleteFromStorage() {
-  findIndex(targetId)
-  ideaArray.splice(itemIndex, 1);
+  findIndex(itemIndex)
+  globalArray.splice(itemIndex, 1);
   localStorage.setItem("listSaved", JSON.stringify(globalArray));
-}
 }
 
 updateTask() {
