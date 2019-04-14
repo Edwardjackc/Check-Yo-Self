@@ -116,3 +116,8 @@ margin-top:80px;
   color:#ffffff;
   height:30px;
 }
+
+.list__task {
+  list-style-type: none
+
+}
