@@ -1,25 +1,20 @@
 var titleInput = document.querySelector('.input__aside--title');
 var taskInput = document.querySelector('.input__aside--task');
-var toDoItems = document.querySelector('.aside__form--to-do');
+var itemListContainer = document.querySelector('.aside__container--to-do');
 var makeList = document.querySelector('.btn__list--make');
 var clearAll = document.querySelector('.btn--list--clear');
 var filterUrgency = document.querySelector('.btn--list--filter');
-var taskContainer = document.querySelector('.list__section__container')
+var listContainer = document.querySelector('.list__section__container')
 
 titleInput.addEventListener('keydown', );
 taskInput.addEventListener('keydown',);
-makeList.addEventListener('click', makeTaskList);
+appendListItems.addEventListener('click',);
+makeList.addEventListener('click',)
 clearAll.addEventListener('click', );
 filterUrgency.addEventListener('click', );
 
 var globalArray = JSON.parse(localStorage.getItem()) || [];
 var tasksArray = [];
-
-makeTaskList(storeListInputs) {
-
-}
-
-
 
 function storeListInputs(id,title,urgent,tasks) {
   var listed = new ToDoList(Date.now(), titleInput.value,tasks.value,taskInput.value);
@@ -27,11 +22,17 @@ function storeListInputs(id,title,urgent,tasks) {
   listed.saveToStorage(globalArray);
 }
 
+function findIndex(targetId) {
+  var itemIndex = ideaArray.findIndex(function (list) {
+    return list.id === targetId;
+  })
+}
+
 function pageReload() {
   console.log(globalArray)
   if (globalArray.length !== 0) {
     globalArray.forEach(function (item) {
-      appendCard(item);
+      appendCard(item)
     })
   }
 }
@@ -42,12 +43,6 @@ function pageLoad() {
     return relist;
   })
 }
-
-
-function taskIdeas() {
-
-}
-
 
 function appendCard(cardList) {
   Container.innerHTML =
@@ -64,11 +59,16 @@ function appendCard(cardList) {
             width=10px>
           </section>
           </article>
-      ` + ideaContainer.innerHTML;
+      ` + listContainer.innerHTML;
 }
 
-funtion appendList() {
-  container. 
+function appendListItems() {
+  container.innerHTML = 
+  ` <ul> 
+      <li>
+      </li>
+    </ul>
+  ` + itemListContainer.innerHTML;
 }
 
 

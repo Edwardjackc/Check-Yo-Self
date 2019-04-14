@@ -13,6 +13,13 @@ saveToStorage() {
   }
 }
 
+deleteFromStorage() {
+  findIndex(targetId)
+  ideaArray.splice(itemIndex, 1);
+  localStorage.setItem("listSaved", JSON.stringify(globalArray));
+}
+}
+
 updateTask() {
 
 }
