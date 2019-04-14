@@ -1,4 +1,4 @@
-class List {
+class ToDoList {
   constructor(id, title, urgent, tasks) {
     this.id = id; 
     this.title = title;
@@ -13,3 +13,6 @@ saveToStorage() {
   }
 }
 
+updateTask() {
+
+}

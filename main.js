@@ -1,20 +1,28 @@
 var titleInput = document.querySelector('.input__aside--title');
 var taskInput = document.querySelector('.input__aside--task');
+var toDoItems = document.querySelector('.aside__form--to-do');
 var makeList = document.querySelector('.btn__list--make');
 var clearAll = document.querySelector('.btn--list--clear');
 var filterUrgency = document.querySelector('.btn--list--filter');
+var taskContainer = document.querySelector('.list__section__container')
 
 titleInput.addEventListener('keydown', );
-taskInput.addEventListener('keydown', );
-makeList.addEventListener('click', );
+taskInput.addEventListener('keydown',);
+makeList.addEventListener('click', makeTaskList);
 clearAll.addEventListener('click', );
 filterUrgency.addEventListener('click', );
 
 var globalArray = JSON.parse(localStorage.getItem()) || [];
 var tasksArray = [];
 
+makeTaskList(storeListInputs) {
+
+}
+
+
+
 function storeListInputs(id,title,urgent,tasks) {
-  var listed = new List(Date.now(), titleInput.value, taskInput.value);
+  var listed = new ToDoList(Date.now(), titleInput.value,tasks.value,taskInput.value);
   globalArray.push(listed)
   listed.saveToStorage(globalArray);
 }
@@ -30,15 +38,19 @@ function pageReload() {
 
 function pageLoad() {
   globalArray.map(relist => {
-    relist = new List(item.id, item.title, item.urgent, item.tasks)
+    relist = new ToDoList(item.id, item.title, item.urgent, item.tasks)
     return relist;
   })
 }
 
 
+function taskIdeas() {
+
+}
+
 
 function appendCard(cardList) {
-  ideaContainer.innerHTML =
+  Container.innerHTML =
     `  <article class="inactive__card" data-id${cardList.id} >
           <section class="card__header">
             <h3>${cardList.title}</h3>
@@ -53,6 +65,10 @@ function appendCard(cardList) {
           </section>
           </article>
       ` + ideaContainer.innerHTML;
+}
+
+funtion appendList() {
+  container. 
 }
 
 
