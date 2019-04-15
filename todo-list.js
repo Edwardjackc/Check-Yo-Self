@@ -1,9 +1,9 @@
 class ToDoList {
-  constructor(id, title, urgent, tasks) {
+  constructor(id, title, urgent, task) {
     this.id = id; 
     this.title = title;
     this.urgent = urgent || false;
-    this.task =[{id:id,name:task, completed:false}] || 0
+    this.task = task || []
   }
 
 saveToStorage() {
@@ -11,10 +11,9 @@ saveToStorage() {
     localStorage.setItem(
     'savedList', stringedTasks);
   }
-}
 
-// deleteFromStorage() {
-// findIndex(itemIndex) {
+
+// deleteFromStorage(itemIndex) {
 //   globalArray.splice(itemIndex, 1);
 //   localStorage.setItem("listSaved", JSON.stringify(globalArray));
 // }
@@ -23,3 +22,4 @@ saveToStorage() {
 // some() breaks out of the loop once a true value is found 
 // every() checks all items in an array 
 // }
+//[{id:math.random(),name:task, completed:false}] || 0
