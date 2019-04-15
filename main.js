@@ -12,10 +12,9 @@ btnSubmitTask.addEventListener('click', appendListItems);
 btnMakeList.addEventListener('click',makeList);
 // clearAll.addEventListener('click', );
 // filterUrgency.addEventListener('click', );
-window.addEventListener("load", pageReload);
+window.addEventListener('load', pageReload);
 
 var globalArray = JSON.parse(localStorage.getItem('savedList')) || [];
-var taskArray = [];
 // function storeListInputs(id,title,urgent,tasks) {
 //   var listed = new ToDoList(Date.now(), titleInput.value, urgent,tasks.value );
 //   globalArray.push(listed)
@@ -73,10 +72,10 @@ function pageLoad() {
   }
 }
 
-function makeList (e) {
+function makeList (e,taskObject) {
   if (taskTitleInput.value && taskInput.value) {
   e.preventDefault();
-  var initialList = new ToDoList (Date.now(), taskTitleInput.value, taskArray);
+  var initialList = new ToDoList (Date.now(), taskTitleInput.value, taskObject);
   globalArray.push(initialList)
   initialList.saveToStorage(globalArray)
   appendCard(initialList)
@@ -85,20 +84,15 @@ function makeList (e) {
 
 
 
-function taskList(item) {
-  var taskObject = {
-    id : Date.now(),
-    content : item,
-    completed: false
-  }
-  taskArray.push(taskObject)
-}
 
-function taskLoop(item){
-  for(var i = 0 ; i< item.task.length; i++) {
-  
-  }
-}
+// iteratite through every card and task to append to card 
+
+// function taskLoop(item){
+//   console.log(item.content)
+//   item.forEach(function(thing, index){
+//     console.log(thing)
+//   })
+//   }
 
 function appendCard(item) {
   listContainer.innerHTML =
@@ -108,7 +102,7 @@ function appendCard(item) {
           </section>
             <ul>
               <li>
-              <p>${taskLoop(item)}
+              <p>${(item)}
               </p>
               </li>
             </ul>
@@ -123,6 +117,7 @@ function appendCard(item) {
 
 function appendListItems(e) {
   e.preventDefault(); 
+  var taskValue = taskInput.value
   itemListContainer.innerHTML = 
   ` <li class="task__aside">
       <img src='images/delete.svg'>
@@ -130,8 +125,20 @@ function appendListItems(e) {
       </p>
     </li>
   ` + itemListContainer.innerHTML;
-  taskList(taskInput.value);
-  console.log(taskArray)
+  taskList(taskValue)
+  console.log(taskValue)
+}
+
+function taskList(item) {
+  // var a = []
+  var taskObject = {
+    id: Date.now(),
+    content: item,
+    completed: false
+  }
+  console.log(taskObject)
+  globalArray.push(taskObject)
+  console.log(globalArray)
 }
 
 // conditional that stops an empty input  
