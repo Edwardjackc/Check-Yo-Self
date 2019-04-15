@@ -117,7 +117,11 @@ margin-top:80px;
   height:30px;
 }
 
-.list__task {
-  list-style-type: none
+.task__aside {
+  list-style-type: none;
+  display:flex
+}
 
+.task__p-input {
+  color:#ffffff;
 }
