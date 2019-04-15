@@ -9,7 +9,6 @@ var listContainer = document.querySelector('.list__section__container')
 
 // titleInput.addEventListener();
 btnSubmitTask.addEventListener('click', appendListItems);
-// appendListItems.addEventListener('click',);
 btnMakeList.addEventListener('click',makeList);
 // clearAll.addEventListener('click', );
 // filterUrgency.addEventListener('click', );
@@ -22,7 +21,6 @@ var taskArray = [];
 //   globalArray.push(listed)
 //   listed.saveToStorage(globalArray);
 // }
-
 
 // function locateIndex(target) {
 //   var parent = target.closest('article');
@@ -41,13 +39,14 @@ function locateIndex(e) {
 }
 
 
-// function removeCard(e) {
-//   var targetId = locateIndex();
-//   if (e.target.className === 'btn__card--delete') {
-//     e.target.parentElement.parentElement.remove();
-//     globalArray.deleteFromStorage(targetId)
-//   }
-// }
+function removeCard(e) {
+  var targetId = locateIndex();
+  if (e.target.className === 'btn__card--delete') {
+    e.target.parentElement.parentElement.remove();
+    globalArray.deleteFromStorage(targetId)
+    console.log(e)
+  }
+}
 
 // function pageReload() {
 //   console.log(globalArray)
@@ -75,12 +74,16 @@ function pageLoad() {
 }
 
 function makeList (e) {
+  if (taskTitleInput.value && taskInput.value) {
   e.preventDefault();
   var initialList = new ToDoList (Date.now(), taskTitleInput.value, taskArray);
   globalArray.push(initialList)
   initialList.saveToStorage(globalArray)
   appendCard(initialList)
+  }
 }
+
+
 
 function taskList(item) {
   var taskObject = {
@@ -91,6 +94,12 @@ function taskList(item) {
   taskArray.push(taskObject)
 }
 
+function taskLoop(item){
+  for(var i = 0 ; i< item.task.length; i++) {
+  
+  }
+}
+
 function appendCard(item) {
   listContainer.innerHTML =
     `  <article class="inactive__card" data-id${item.id} >
@@ -98,10 +107,13 @@ function appendCard(item) {
             <h3>${item.title}</h3>
           </section>
             <ul>
-              <li>${item.task}</li>
+              <li>
+              <p>${taskLoop(item)}
+              </p>
+              </li>
             </ul>
           <section class="card__footer">
-            <input type="image" alt="button mark card urgent" src=${item.urgent === true ? 'images/urgent-active.svg' : 'images/urgent.svg'}"images/urgent.svg" width=15px color="3c6577">
+            <input type="image" alt="button mark card urgent" src=${item.urgent === true ? 'images/urgent-active.svg' : 'images/urgent.svg'}  color="#3c6577">
             <input type="image"class="btn__card--delete" alt="button delete card" src="images/delete.svg" width=15px color="#3c6577"
             width=10px>
           </section>
