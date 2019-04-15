@@ -3,14 +3,14 @@ var taskInput = document.querySelector('.input__aside--task');
 var btnSubmitTask = document.querySelector('.btn__aside__task--append')
 var itemListContainer = document.querySelector('.item__container--to-do');
 var btnMakeList = document.querySelector('.btn--list--make');
-var clearAll = document.querySelector('.btn--list--clear');
+var btnClearAll = document.querySelector('.btn--list--clear');
 var filterUrgency = document.querySelector('.btn--list--filter');
-var listContainer = document.querySelector('.list__section__container')
-
+var listContainer = document.querySelector('.list__section__container');
+var inputForm = document.querySelector('.aside__form--input')
 // titleInput.addEventListener();
 btnSubmitTask.addEventListener('click', appendListItems);
 btnMakeList.addEventListener('click',taskList);
-// clearAll.addEventListener('click', );
+btnClearAll.addEventListener('click',clearInputsBtn);
 // filterUrgency.addEventListener('click', );
 window.addEventListener('load', pageReload);
 
@@ -38,6 +38,20 @@ function locateIndex(e) {
 }
 
 
+function toggleClearBtn() {
+  if (taskTitle && taskTitleInput != '') {
+    btnClearAll.removeAttribute('disabled');
+  } else {
+    btnClear.setAttribute('disabled', 'disabled');
+  }
+};
+
+function clearInputsBtn(e) { 
+  e.preventDefault();
+  inputForm.reset();
+  btnClearAll.setAttribute('disabled', 'disabled')
+};
+
 function removeCard(e) {
   var targetId = locateIndex();
   if (e.target.className === 'btn__card--delete') {
@@ -45,7 +59,7 @@ function removeCard(e) {
     globalArray.deleteFromStorage(targetId)
     console.log(e)
   }
-}
+};
 
 // function pageReload() {
 //   console.log(globalArray)
