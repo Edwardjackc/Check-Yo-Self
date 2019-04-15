@@ -9,7 +9,7 @@ var listContainer = document.querySelector('.list__section__container')
 
 // titleInput.addEventListener();
 btnSubmitTask.addEventListener('click', appendListItems);
-btnMakeList.addEventListener('click',makeList);
+btnMakeList.addEventListener('click',taskList);
 // clearAll.addEventListener('click', );
 // filterUrgency.addEventListener('click', );
 window.addEventListener('load', pageReload);
@@ -68,33 +68,28 @@ function pageLoad() {
   var item = [];
   for (i = 0; i < globalArray.length; item++) {
     var list = new TodoList(globalArray[i].id,globalArray[i].title, globalArray[i].urgent, globalArray[i].task).push(list)
-    console.log(list)
   }
 }
 
-function makeList (e,taskObject) {
+function makeList (taskArray) {
   if (taskTitleInput.value && taskInput.value) {
-  e.preventDefault();
-  var initialList = new ToDoList (Date.now(), taskTitleInput.value, taskObject);
+  var initialList = new ToDoList (Date.now(), taskTitleInput.value, false, taskArray);
   globalArray.push(initialList)
   initialList.saveToStorage(globalArray)
   appendCard(initialList)
   }
 }
 
-
-
-
-// iteratite through every card and task to append to card 
-
-// function taskLoop(item){
-//   console.log(item.content)
-//   item.forEach(function(thing, index){
-//     console.log(thing)
-//   })
-//   }
+function taskLoop(item){
+  var string = ""
+  for (var i =0; i < item.task.length; i++) {
+    string += `<p>${item.task[i].content}</p>`
+  }
+  return string 
+  }
 
 function appendCard(item) {
+  console.log(globalArray)
   listContainer.innerHTML =
     `  <article class="inactive__card" data-id${item.id} >
           <section class="card__header">
@@ -102,7 +97,7 @@ function appendCard(item) {
           </section>
             <ul>
               <li>
-              <p>${(item)}
+              <p class="item__form__list">${taskLoop(item)}
               </p>
               </li>
             </ul>
@@ -117,7 +112,6 @@ function appendCard(item) {
 
 function appendListItems(e) {
   e.preventDefault(); 
-  var taskValue = taskInput.value
   itemListContainer.innerHTML = 
   ` <li class="task__aside">
       <img src='images/delete.svg'>
@@ -125,22 +119,21 @@ function appendListItems(e) {
       </p>
     </li>
   ` + itemListContainer.innerHTML;
-  taskList(taskValue)
-  console.log(taskValue)
 }
 
-function taskList(item) {
-  // var a = []
-  var taskObject = {
-    id: Date.now(),
-    content: item,
-    completed: false
+function taskList(e) {
+  e.preventDefault();
+  var tempArray = []
+  var allTaskOutputs = document.querySelectorAll('.task__p-input')
+  for (var i = 0; i < allTaskOutputs.length; i++) {
+    var taskObject = {
+      id: Date.now(),
+      content: allTaskOutputs[i].innerText
   }
-  console.log(taskObject)
-  globalArray.push(taskObject)
-  console.log(globalArray)
+      tempArray.push(taskObject)
+  }
+  makeList(tempArray); 
 }
-
 // conditional that stops an empty input  
 
 
