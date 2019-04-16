@@ -104,7 +104,8 @@ label {
 }
 
 .btn__aside__task--append {
-  height:30px
+  height:30px;
+  background-color:#1f1f3d
 }
 
 .btn__aside--task {
