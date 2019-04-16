@@ -1,8 +1,8 @@
 * {
   box-sizing: border-box;
-/* border: 1px solid red; */
+  border: 1px solid red;
 }
-/* ------------- Body ----------- */
+/* ----- -------- Body ----------- */
 body {
   height:100vh;
   font-family:'Open Sans', sans-serif;
@@ -71,10 +71,9 @@ h3 {
   padding:4px
 }
 
-
 /* ------------- Aside ---------- */
 aside {
-  background-color:#5878A8;
+  background-color:#59798B;
   width:350px;
 }
 
@@ -92,23 +91,20 @@ label {
 .aside__form--input{
   display:flex;
   flex-direction:column;
-  align-content: space-around;
-  margin-top:20px; 
+  margin-top:50px;
 }
 
-.aside__form--input {
-  display: flex;
-  flex-direction:column;
-  margin-top:20px;
-} 
-
-.input__aside {
+.input__aside--task {
   height:30px;
+  width:100%;
 }
-.aside__form--task {
-display:flex;
-flex-direction: column;
-margin-top:80px;
+
+.input__task__item {
+  display:inline-flex 
+}
+
+.btn__aside__task--append {
+  height:30px
 }
 
 .btn__aside--task {
@@ -117,11 +113,23 @@ margin-top:80px;
   height:30px;
 }
 
-.task__aside {
-  list-style-type: none;
-  display:flex
-}
-
 .task__p-input {
   color:#ffffff;
+}
+
+.task__item {
+  list-style-type: none;
+  display:flex;
+  width:20px;
+}
+
+.task__title__wrapper {
+  display:flex; 
+  justify-content:center;
+  height:30px;
+  margin-top:10px
+}
+
+.input__aside--title {
+  width:100%;
 }
