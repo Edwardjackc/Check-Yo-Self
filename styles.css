@@ -2,7 +2,9 @@
   box-sizing: border-box;
   /* border: 1px solid red; */
 }
+
 /* ----- -------- Body ----------- */
+
 body {
   height:100vh;
   display:grid;
@@ -10,7 +12,9 @@ body {
   grid-template-rows: 80px 1fr;
   font-family:'Open Sans', sans-serif;
 }
+
 /* ------------- Header --------- */ 
+
 header {
   background-color: #1F1F3D;
   grid-column:1/ span 2; 
@@ -68,19 +72,26 @@ h3 {
   border-bottom:1px solid #c7d3d8;
 }
 
+.card__middle {
+  min-height:150px;
+}
+
 .card__footer {
   display:flex;
   justify-content: space-between;
   height:30px;
   border-top: solid 1px #c7d3d8;
   padding:4px;
-  widows: 15px;
+  width: 100%
 }
 
+.card__footer__images{
+  width:25px;
+}
 /* ------------- Aside ---------- */
 aside {
   background-color:#59798B;
-  padding:15px;
+  padding:10px;
   grid-column:1; 
 }
 

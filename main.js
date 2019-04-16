@@ -59,8 +59,6 @@ function removeCard(e) {
   locatedIndex.deleteFromStorage(targetId)
   }
 }
-
-
 // function pageReload() {
 //   console.log(globalArray)
 //   if (globalArray.length !== 0) {
@@ -69,6 +67,8 @@ function removeCard(e) {
 //     })
 //   }
 // }
+
+
 function pageReload() {
   console.log(globalArray)
   if (globalArray.length !== 0) {
@@ -109,15 +109,13 @@ function appendCard(item) {
           <section class="card__header">
             <h3>${item.title}</h3>
           </section>
-            <ul>
-              <li>
+          <section class="card__middle">
               <p class="item__form__list">${taskLoop(item)}
               </p>
-              </li>
-            </ul>
+          </section>
           <section class="card__footer">
-            <input type="image" alt="button mark card urgent" src=${item.urgent === true ? 'images/urgent-active.svg' : 'images/urgent.svg'}  color="#3c6577">
-            <input type="image"class="btn__card--delete" alt="button delete card" src="images/delete.svg">
+            <input type="image"class="card__footer__images alt="button mark card urgent" src=${item.urgent === true ? 'images/urgent-active.svg' : 'images/urgent.svg'}  color="#3c6577">
+            <input type="image"class="card__footer__images" alt="button delete card" src="images/delete.svg">
           </section>
           </article>
       ` + listContainer.innerHTML;
