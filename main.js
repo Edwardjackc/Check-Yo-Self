@@ -138,7 +138,7 @@ function appendListItems(e) {
 function taskList(e) {
   e.preventDefault();
   var tempArray = []
-  var allTaskOutputs = document.querySelectorAll('.task__p-input')
+  var allTaskOutputs = document.querySelectorAll('.insert__aside--text')
   for (var i = 0; i < allTaskOutputs.length; i++) {
     var taskObject = {
       id: Date.now(),
