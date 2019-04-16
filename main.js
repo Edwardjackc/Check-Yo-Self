@@ -117,8 +117,7 @@ function appendCard(item) {
             </ul>
           <section class="card__footer">
             <input type="image" alt="button mark card urgent" src=${item.urgent === true ? 'images/urgent-active.svg' : 'images/urgent.svg'}  color="#3c6577">
-            <input type="image"class="btn__card--delete" alt="button delete card" src="images/delete.svg" width=15px color="#3c6577"
-            width=10px>
+            <input type="image"class="btn__card--delete" alt="button delete card" src="images/delete.svg">
           </section>
           </article>
       ` + listContainer.innerHTML;

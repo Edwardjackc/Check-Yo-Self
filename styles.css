@@ -5,20 +5,24 @@
 /* ----- -------- Body ----------- */
 body {
   height:100vh;
+  display:grid;
+  grid-template-columns: 300px auto;
+  grid-template-rows: 80px 1fr;
   font-family:'Open Sans', sans-serif;
 }
 /* ------------- Header --------- */ 
 header {
   background-color: #1F1F3D;
-  display:flex;
+  grid-column:1/ span 2; 
+  grid-row: 1; 
   justify-content:space-between;
   font-family:Open Sans;
   font-weight: 800;
-  height:10%; 
+  display:flex
 }
 
 header input{
-  height:30px;
+  height:35px;
   width:220px;
   margin:20px 15px;
 }
@@ -35,9 +39,11 @@ span {
 
 /* ------------- Main ----------- */
 main {
-  display:flex;
+  /* display:flex; */
   height:100%;
   background-color:#f3f6f7;
+  width:100%;
+  grid-column:2
 }
 
 h3 {
@@ -46,12 +52,9 @@ h3 {
 }
 
 .list__section__container {
-  width:75%;
+  column-width: 13em; 
 }
 
-article {
-  min-height:100px
-}
 .inactive__card {
   display:flex;
   flex-flow: column;
@@ -63,7 +66,6 @@ article {
 
 .card__header {
   border-bottom:1px solid #c7d3d8;
-  height:30px;
 }
 
 .card__footer {
@@ -72,15 +74,15 @@ article {
   height:30px;
   border-top: solid 1px #c7d3d8;
   padding:4px;
+  widows: 15px;
 }
 
 /* ------------- Aside ---------- */
 aside {
   background-color:#59798B;
-  width:350px;
-  padding:15px
+  padding:15px;
+  grid-column:1; 
 }
-
 
 label {
   font-weight:400;
