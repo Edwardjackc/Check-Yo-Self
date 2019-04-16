@@ -49,12 +49,15 @@ h3 {
   width:75%;
 }
 
+article {
+  min-height:100px
+}
 .inactive__card {
   display:flex;
   flex-flow: column;
   border:1px solid #c7d3d8;
   color:#1f1f3d;
-  width:300px;
+  width:30%;
   margin:20px;
 }
 
@@ -68,14 +71,14 @@ h3 {
   justify-content: space-between;
   height:30px;
   border-top: solid 1px #c7d3d8;
-  padding:4px
+  padding:4px;
 }
 
 /* ------------- Aside ---------- */
 aside {
   background-color:#59798B;
   width:350px;
-  padding:8px
+  padding:15px
 }
 
 
@@ -89,7 +92,7 @@ label {
 .task__title__wrapper {
   display:flex; 
   justify-content:center;
-  height:30px;
+  height:35px;
   margin-top:10px
 }
 
@@ -97,11 +100,13 @@ label {
   display:flex;
   flex-direction:column;
   margin-top:50px;
+  
 }
 
 .input__aside--task {
-  height:30px;
+  height:40px;
   width:100%;
+  border:1px solid #1F1F3D
 }
 
 .input__task__item {
@@ -109,18 +114,34 @@ label {
 }
 
 .btn__aside__task--append {
-  height:30px;
+  height:40px;
   background-color:#1f1f3d
 }
 
 .btn__aside--task {
   background-color:#1f1f3d;
   color:#ffffff;
-  height:30px;
+  height:40px;
+  border: 1px solid #1F1F3D;
+  margin:10px 0px
+}
+.btn--list--filter {
+  margin-top:40px;
+  width:100%;
+}
+
+.aside__bottom {
+  border-top:1px solid #1F1F3D
 }
 
 .insert__aside--text {
   color:#ffffff;
+  align-self: center;
+  color: #fff;
+  flex-flow: row;
+  font-size: 18px;
+  margin: 0px;
+  padding-left: 5px;
 }
 
 .insert__aside--task {
@@ -142,6 +163,14 @@ label {
 
 .input__aside--title {
   width:100%;
+  border: 1px solid #1F1F3D;
+  height:40px;
 }
 
+.list__section__container {
+  flex-wrap:wrap;
+}
 
+.input__task__item {
+  width:100%;
+}
