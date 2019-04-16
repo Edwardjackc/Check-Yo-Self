@@ -49,17 +49,17 @@ function toggleClearBtn() {
 function clearInputsBtn(e) { 
   e.preventDefault();
   inputForm.reset();
-  btnClearAll.setAttribute('disabled', 'disabled')
+  btnClearAll.setAttribute("enable","enable")
 };
 
 function removeCard(e) {
-  var targetId = locateIndex();
-  if (e.target.className === 'btn__card--delete') {
-    e.target.parentElement.parentElement.remove();
-    globalArray.deleteFromStorage(targetId)
-    console.log(e)
+  var locatedIndex = locateIndex();
+  if (e.target.className === "btn__card--delete") {
+  e.target.parentElement.parentElement.remove();
+  locatedIndex.deleteFromStorage(targetId)
   }
-};
+}
+
 
 // function pageReload() {
 //   console.log(globalArray)
@@ -127,7 +127,7 @@ function appendCard(item) {
 function appendListItems(e) {
   e.preventDefault(); 
   itemListContainer.innerHTML = 
-  ` <li class="task__aside">
+  ` <li class="task__item">
       <img src='images/delete.svg'>
       <p class="task__p-input">${taskInput.value}
       </p>

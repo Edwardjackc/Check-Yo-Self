@@ -15,22 +15,26 @@
     </header>
     <main>
       <aside>
+
+        
+        <label>Task Title</label>
+        <wrapper class="task__title__wrapper">         
+          <input type="text" class="input__aside--title " name="to-do" type="text">
+        </wrapper>
+
+        
         <form class="aside__form--input">
-          <label>Task Title</label>
-          <input type="text" class="input__aside input__aside--title " name="to-do" type="text">
           <label>Task Item</label>
-          <input type="text" class="input__aside input__aside--task" name="to-do" type="text">
+          <container class = "input__task__item">
+            <input type="text" class="input__aside--task" name="to-do" type="text">
           <input type="image" class="btn__aside__task--append" name="to-do-task" src="images/plus.svg" width=25px>
-        </form>
-        <form>
+          </container>
           <ul class="item__container--to-do">
           </ul>
-        </form>
-        <form class="aside__form--task">
           <button class="btn__aside--task btn--list--make">Make Task List</button>
           <button class="btn__aside--task btn--list--clear">Clear All</button>
+          </form>
           <button class="btn__aside--task btn--list--filter">Filter by Urgency</button>
-        </form>
       </aside>
       <section class="list__section__container">
         <!-- <template> -->
