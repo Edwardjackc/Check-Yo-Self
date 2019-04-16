@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 /* ----- -------- Body ----------- */
 body {
@@ -75,17 +75,22 @@ h3 {
 aside {
   background-color:#59798B;
   width:350px;
+  padding:8px
 }
 
-form{
-  margin:8px
-}
 
 label {
   font-weight:400;
   margin-bottom:4px;
   font-size:.8em;
   color: #c7d3d8;
+}
+
+.task__title__wrapper {
+  display:flex; 
+  justify-content:center;
+  height:30px;
+  margin-top:10px
 }
 
 .aside__form--input{
@@ -114,23 +119,29 @@ label {
   height:30px;
 }
 
-.task__p-input {
+.insert__aside--text {
   color:#ffffff;
 }
 
-.task__item {
+.insert__aside--task {
   list-style-type: none;
   display:flex;
   width:20px;
 }
 
-.task__title__wrapper {
-  display:flex; 
-  justify-content:center;
-  height:30px;
-  margin-top:10px
+.insert__aside--btn {
+  align-self: baseline;
+  flex-flow: row;
+  height: 26px;
+  margin-left: 7%;
+}
+
+.list__section__container {
+  display:flex
 }
 
 .input__aside--title {
   width:100%;
 }
+
+

@@ -127,11 +127,11 @@ function appendCard(item) {
 function appendListItems(e) {
   e.preventDefault(); 
   itemListContainer.innerHTML = 
-  ` <li class="task__item">
-      <img src='images/delete.svg'>
-      <p class="task__p-input">${taskInput.value}
+  ` <wrapper class="insert__aside--task">
+      <input type="image" class="insert__aside--btn" src='images/delete.svg' width=25px height=20px>
+      <p class="insert__aside--text">${taskInput.value}
       </p>
-    </li>
+    </wrapper>
   ` + itemListContainer.innerHTML;
 }
 
