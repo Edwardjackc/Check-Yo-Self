@@ -35,7 +35,7 @@ function persist(){
   var stringedTasks = JSON.stringify(globalArray);
   localStorage.setItem(
     'savedList', stringedTasks);
-}
+};
 
 function toggleClearBtn() {
   if (taskTitle && taskTitleInput != '') {
@@ -50,7 +50,7 @@ function clearInputsBtn(e) {
   taskTitleInput.value = "";
   itemListContainer.innerHTML = "";
   taskInput.value = "";
-  btnClearAll.setAttribute("enable","enable")
+  btnClearAll.setAttribute("enable","enable");
 };
 
 function deleteCardFromStorage(e) {
@@ -64,7 +64,6 @@ function deleteCardFromStorage(e) {
 
 function pageReload() {
   document.querySelector('.list__section__container').innerHTML="";
-  console.log(globalArray)
   if (globalArray.length !== 0) {
     globalArray.forEach(function (item) {
       appendCard(item);
@@ -78,20 +77,20 @@ function attachEvents() {
   loopUrgent();
 };
 
-function loopDelete(){
-  var deleteCard = document.querySelectorAll('.deletebutton')
+function loopDelete() {
+  var deleteCard = document.querySelectorAll('.delete-button')
   if (deleteCard) {
     for (var i=0; i< deleteCard.length; i++)
     deleteCard[i].addEventListener('click', deleteCardFromStorage)
-  }
-}
+  };
+};
 
-function loopUrgent(){
-  var urgentCard = document.querySelectorAll('.urgentbutton')
+function loopUrgent() {
+  var urgentCard = document.querySelectorAll('.urgent-button')
   if (urgentCard) {
     for (var i = 0; i < urgentCard.length; i++)
     urgentCard[i].addEventListener('click', markAsUrgent);
-  }
+  };
 };
 
 function markAsUrgent(e) {
@@ -126,7 +125,6 @@ function taskLoop(item){
 };
 
 function appendCard(item) {
-  console.log(globalArray)
   listContainer.innerHTML =
     `  <article class="inactive__card" data-id=${item.id} >
           <section class="card__header">
@@ -137,8 +135,8 @@ function appendCard(item) {
               </p>
           </section>
           <section class="card__footer">
-            <input type="image"class="card__footer__images urgentbutton  alt="button mark card urgent" src=${item.urgent === true ? 'images/urgent-active.svg' : 'images/urgent.svg'}>
-            <input type="image"class="card__footer__images deletebutton" alt="button delete card" src="images/delete.svg">
+            <input type="image"class="card__footer__images urgent-button  alt="button mark card urgent" src=${item.urgent === true ? 'images/urgent-active.svg' : 'images/urgent.svg'}>
+            <input type="image"class="card__footer__images delete-button" alt="button delete card" src="images/delete.svg">
           </section>
           </article>
       ` + listContainer.innerHTML;

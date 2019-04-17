@@ -11,16 +11,16 @@
   <body>
     <header>
       <h1>Check <span>YO'</span> Self </h1>
-      <wrap class="header__search">
-        <img class="header__search--icon"src="images/search.svg">
-        <input type ="header__inputr" name="search" class="header__input--search" placeholder="Search"> 
+      <wrapper class="header__search">
+        <img class="header__search--icon"src="images/search.svg" alt="search icon">
+        <input type ="header__input" name="search" class="header__input--search" placeholder="Search"> 
       </wrap>
     </header>
       <aside>
       <form class="aside__form--input">
         <label>Task Title</label>
         <wrapper class="aside__title__wrapper">         
-          <input type="text" class="input__aside--title " name="to-do" type="text">
+          <input type="text" class="input__aside--title"  name="to-do" type="text">
         </wrapper>
       </form>
         <form class="aside__form--input">
@@ -29,14 +29,14 @@
           <label>Task Item</label>
           <container class = "input__task--item">
             <input type="text" class="input__aside--task" name="to-do" type="text">
-          <input type="image" class="btn__aside__task--append" name="to-do-task" src="images/plus.svg" width=25px>
+          <input type="image" class="btn__aside__task--append" name="to-do-task" src="images/plus.svg" alt="button append task">
           </container>
           <button class="btn__aside--task btn__list--make">Make Task List</button>
           <button class="btn__aside--task btn__list--clear">Clear All</button>
           </form>
-          <container class = "input__task--item aside__bottom">
+          <wrapper class = "input__task--item aside__bottom">
           <button class="btn__aside--task btn__list--filter">Filter by Urgency</button>
-          </container>
+          </wrapper>
       </aside>
     <main>
       <section class="list__section__container">
