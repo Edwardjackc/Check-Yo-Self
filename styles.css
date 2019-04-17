@@ -26,9 +26,9 @@ header {
 }
 
 header input{
-  height:35px;
-  width:220px;
-  margin:20px 15px;
+  height:40px;
+  width:250px;
+  margin:20px 10px;
 }
 
 h1 {
@@ -39,6 +39,16 @@ h1 {
 
 span {
   color:#FEC40E;
+}
+
+.header__search {
+  display:flex;
+}
+
+.header__search--icon {
+  background-color:#f3f6f7;
+  height:40px;
+  margin:20px -10px;
 }
 
 /* ------------- Main ----------- */
