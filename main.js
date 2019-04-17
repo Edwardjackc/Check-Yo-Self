@@ -95,7 +95,6 @@ function loopUrgent() {
 };
 
 function markAsUrgent(e) {
-  debugger;
   var locatedIndex = locateIndex(e);
   globalArray[locatedIndex].urgent ? globalArray[locatedIndex].urgent = false : globalArray[locatedIndex].urgent = true ;
   persist();
@@ -111,7 +110,7 @@ function pageLoad() {
 
 function makeList (taskArray) {
   if (taskTitleInput.value && taskInput.value) {
-  var initialList = new ToDoList (Date.now(), taskTitleInput.value, false, taskArray);
+  var initialList = new ToDoList(Date.now(), taskTitleInput.value, false, taskArray);
   globalArray.push(initialList)
   initialList.saveToStorage(globalArray)
   appendCard(initialList)

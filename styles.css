@@ -1,40 +1,38 @@
 * {
   box-sizing: border-box;
-  /* border: 1px solid red; */
 }
-
 /* ----- -------- Body ----------- */
 
 body {
-  height:100vh;
   display:grid;
+  font-family:'Open Sans', sans-serif;
   grid-template-columns: 300px auto;
   grid-template-rows: 80px 1fr;
-  font-family:'Open Sans', sans-serif;
+  height:100vh;
 }
 
 /* ------------- Header --------- */ 
 
 header {
   background-color: #1F1F3D;
+  display:flex;
+  font-family:Open Sans;
+  font-weight: 800;
   grid-column:1/ span 2; 
   grid-row: 1; 
   justify-content:space-between;
-  font-family:Open Sans;
-  font-weight: 800;
-  display:flex
 }
 
 header input{
   height:40px;
-  width:250px;
   margin:20px 10px;
+  width:250px;
 }
 
 h1 {
   color:#ffffff;
+  margin-left:10px;
   width:300px;
-  margin-left:10px
 }
 
 span {
@@ -53,11 +51,10 @@ span {
 
 /* ------------- Main ----------- */
 main {
-  /* display:flex; */
-  height:100%;
   background-color:#f3f6f7;
+  grid-column:2;
+  height:100%;
   width:100%;
-  grid-column:2
 }
 
 h3 {
@@ -70,12 +67,13 @@ h3 {
 }
 
 .inactive__card {
-  display:flex;
-  flex-flow: column;
   border:1px solid #c7d3d8;
   color:#1f1f3d;
-  width:40%;
+  display:flex;
+  flex-flow: column;
   margin:20px;
+  min-width: 350px;
+  width:40%;
 }
 
 .card__header {
@@ -83,55 +81,54 @@ h3 {
 }
 
 .card__middle {
-  min-height:150px;
   margin:10px;
+  min-height:150px;
 }
 
 .card__footer {
-  display:flex;
-  justify-content: space-between;
-  height:30px;
   border-top: solid 1px #c7d3d8;
+  display:flex;
+  height:30px;
+  justify-content: space-between;
   padding:4px;
   width: 100%
 }
 
 .card__footer__images{
-  width:25px;
   color:#3c6577;
+  width:25px;
 }
 /* ------------- Aside ---------- */
 aside {
   background-color:#59798B;
-  padding:10px;
   grid-column:1; 
+  padding:10px;
 }
 
 label {
+  color: #c7d3d8;
+  font-size:.8em;
   font-weight:400;
   margin-bottom:4px;
-  font-size:.8em;
-  color: #c7d3d8;
 }
 
 .task__title__wrapper {
   display:flex; 
-  justify-content:center;
   height:35px;
+  justify-content:center;
   margin-top:10px
 }
-
+  
 .aside__form--input{
   display:flex;
   flex-direction:column;
   margin-top:20px;
-  
 }
 
 .input__aside--task {
+  border:1px solid #1F1F3D
   height:40px;
   width:100%;
-  border:1px solid #1F1F3D
 }
 
 .input__task__item {
@@ -139,16 +136,16 @@ label {
 }
 
 .btn__aside__task--append {
+  background-color:#1f1f3d;
   height:40px;
-  background-color:#1f1f3d
 }
 
 .btn__aside--task {
   background-color:#1f1f3d;
+  border: 1px solid #1F1F3D;
   color:#ffffff;
   height:40px;
-  border: 1px solid #1F1F3D;
-  margin:10px 0px
+  margin:10px 0px;
 }
 .btn--list--filter {
   margin-top:40px;
@@ -156,13 +153,13 @@ label {
 }
 
 .aside__bottom {
-  border-top:1px solid #1F1F3D
+  border-top:1px solid #1F1F3D;
 }
 
 .insert__aside--text {
-  color:#ffffff;
   align-self: center;
   color: #fff;
+  color:#ffffff;
   flex-flow: row;
   font-size: 18px;
   margin: 0px;
@@ -170,10 +167,10 @@ label {
 }
 
 .insert__aside--task {
-  list-style-type: none;
   display:flex;
-  width:20px;
+  list-style-type: none;
   margin:5px;
+  width:20px;
 }
 
 .insert__aside--btn {
@@ -189,13 +186,13 @@ label {
 }
 
 .list__section__container {
-  display:flex
+  display:flex;
 }
 
 .input__aside--title {
-  width:100%;
   border: 1px solid #1F1F3D;
   height:40px;
+  width:100%;
 }
 
 .list__section__container {
@@ -209,4 +206,15 @@ label {
 .delete__card__item {
   height:15px;
   margin-right:5px;
+}
+/*--------------------  Media ------------ */
+@media screen and (max-width: 1024px){
+
+@media screen and (max-width: 825px){
+  body{
+    grid-template-columns: 300px;
+  }
+}
+@media screen and (max-width: 320px){
+
 }
