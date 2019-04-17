@@ -1,7 +1,3 @@
-
-
-
-
 var taskTitleInput = document.querySelector('.input__aside--title');
 var taskInput = document.querySelector('.input__aside--task');
 var btnSubmitTask = document.querySelector('.btn__aside__task--append')
@@ -13,33 +9,13 @@ var listContainer = document.querySelector('.list__section__container');
 var inputForm = document.querySelector('.aside__form--input')
 var deleteItem = document.querySelector('.insert__aside__container')
 
-// titleInput.addEventListener();
 btnSubmitTask.addEventListener('click', appendListItems);
 btnMakeList.addEventListener('click',taskList);
 btnClearAll.addEventListener('click',clearInputsBtn);
 deleteItem.addEventListener('click', deleteAnItem)
-
-// filterUrgency.addEventListener('click', );
 window.addEventListener('load', pageReload);
 
 var globalArray = JSON.parse(localStorage.getItem('savedList')) || [];
-
-attachEvents();
-// function storeListInputs(id,title,urgent,tasks) {
-//   var listed = new ToDoList(Date.now(), titleInput.value, urgent,tasks.value );
-//   globalArray.push(listed)
-//   listed.saveToStorage(globalArray);
-
-// }
-// globalArray needs to have a function that makes ToDoListObjects as opposed to parsing...so that toDo methods are able to be used
-
-
-// function locateIndex(target) {
-//   var parent = target.closest('article');
-//   var parentID = parseInt(parent.dataset.id);
-//   var index = lists.findIndex(element => element.id === parentID);
-//   return index;
-// }
 
 
 function locateIndex(e) {
@@ -77,16 +53,6 @@ function clearInputsBtn(e) {
   btnClearAll.setAttribute("enable","enable")
 };
 
-// function removeCard() {
-//   deleteCardFromDom();
-//   deleteCardFromStorage();
-// }
-
-// function deleteCardFromDom() {
-// var clickedItem = e.target.closest('article');
-// clickedItem.remove();
-// }
-
 function deleteCardFromStorage(e) {
   var locatedIndex = locateIndex(e);
   if (e.target.closest('article')) {
@@ -94,8 +60,7 @@ function deleteCardFromStorage(e) {
   globalArray.splice(locatedIndex, 1);
   removeFromLocalStorage(e);
   }
-}
-
+};
 
 function pageReload() {
   document.querySelector('.list__section__container').innerHTML="";
@@ -108,18 +73,26 @@ function pageReload() {
 attachEvents();
 };
 
+function attachEvents() {
+  loopDelete();
+  loopUrgent();
+};
+
 function attachEvents(){
   var deleteCard = document.querySelectorAll('.deletebutton')
   if (deleteCard) {
     for (var i=0; i< deleteCard.length; i++)
     deleteCard[i].addEventListener('click', deleteCardFromStorage)
   }
+};
+
+function loopUrgent() {
   var urgentCard = document.querySelectorAll('.urgentbutton')
   if (urgentCard) {
     for (var i = 0; i < urgentCard.length; i++)
     urgentCard[i].addEventListener('click', markAsUrgent);
   }
-}
+};
 
 function markAsUrgent(e) {
   debugger;
@@ -127,7 +100,7 @@ function markAsUrgent(e) {
   globalArray[locatedIndex].urgent ? globalArray[locatedIndex].urgent = false : globalArray[locatedIndex].urgent = true ;
   persist();
   pageReload();
-}
+};
 
 function pageLoad() {
   var item = [];
@@ -202,7 +175,3 @@ function taskList(e) {
   }
   makeList(tempArray); 
 };
-// conditional that stops an empty input  
-
-
-/*  */ 
