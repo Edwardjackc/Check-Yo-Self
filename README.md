@@ -1,6 +1,6 @@
 # Check Yo'Self
 
-Check Yo'Self is a task oriented persons best friend. Using Javascript,css,html and  with a focus on local storage, I will be shifting my focus to object oriented programming as I create a web based application oriented around creating, appending task to list that will append to the DOM.
+Check Yo'Self is a task oriented persons best friend. Using Javascript,css,html and  with a focus on local storage, I will be shifting my focus to object oriented programming as I create a web based application oriented around creating and appending tasks to a list that will append to the DOM as well as persist.
 
 
 ## Comp Examples 
