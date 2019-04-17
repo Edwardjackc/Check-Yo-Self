@@ -208,11 +208,25 @@ label {
 }
 /*--------------------  Media ------------ */
 @media screen and (max-width: 1024px){
-
+}
 @media screen and (max-width: 825px){
   body{
     grid-template-columns: 300px;
   }
 }
+
 @media screen and (max-width: 320px){
+  body {
+    display:block;
+  }
+
+  .inactive__card {
+  border:1px solid #c7d3d8;
+  color:#1f1f3d;
+  display:flex;
+  flex-flow: column;
+  margin:20px;
+  min-width: 120px;
+  width:40%;
+  }
 }
