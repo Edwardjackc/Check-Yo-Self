@@ -116,7 +116,7 @@ label {
   display:flex; 
   height:35px;
   justify-content:center;
-  margin-top:10px
+  margin-top:10px;
 }
   
 .aside__form--input{
@@ -126,7 +126,7 @@ label {
 }
 
 .input__aside--task {
-  border:1px solid #1F1F3D
+  border:1px solid #1F1F3D;
   height:40px;
   width:100%;
 }
@@ -139,6 +139,7 @@ label {
 .btn__aside__task--append {
   background-color:#1f1f3d;
   height:40px;
+  width:25px;
 }
 
 .btn__aside--task {
@@ -148,6 +149,7 @@ label {
   height:40px;
   margin:10px 0px;
 }
+
 .btn__list--filter {
   margin-top:40px;
   width:100%;
@@ -213,5 +215,4 @@ label {
   }
 }
 @media screen and (max-width: 320px){
-
 }
