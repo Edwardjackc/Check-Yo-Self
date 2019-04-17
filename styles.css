@@ -64,7 +64,7 @@ h3 {
   flex-flow: column;
   border:1px solid #c7d3d8;
   color:#1f1f3d;
-  width:30%;
+  width:40%;
   margin:20px;
 }
 
@@ -74,6 +74,7 @@ h3 {
 
 .card__middle {
   min-height:150px;
+  margin:10px;
 }
 
 .card__footer {
@@ -87,6 +88,7 @@ h3 {
 
 .card__footer__images{
   width:25px;
+  color:#3c6577;
 }
 /* ------------- Aside ---------- */
 aside {
@@ -112,7 +114,7 @@ label {
 .aside__form--input{
   display:flex;
   flex-direction:column;
-  margin-top:50px;
+  margin-top:20px;
   
 }
 
@@ -161,6 +163,7 @@ label {
   list-style-type: none;
   display:flex;
   width:20px;
+  margin:5px;
 }
 
 .insert__aside--btn {
@@ -168,6 +171,11 @@ label {
   flex-flow: row;
   height: 26px;
   margin-left: 7%;
+}
+
+.insert__aside__container {
+  margin-bottom:17px;
+  overflow:auto;
 }
 
 .list__section__container {
@@ -186,4 +194,9 @@ label {
 
 .input__task__item {
   width:100%;
+}
+
+.delete__card__item {
+  height:15px;
+  margin-right:5px;
 }

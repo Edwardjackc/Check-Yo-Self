@@ -10,12 +10,12 @@ saveToStorage() {
     var stringedTasks = JSON.stringify(globalArray);
     localStorage.setItem(
     'savedList', stringedTasks);
-}
+  }
+
+
+deleteFromStorage(itemIndex) {
+  parsedItems.splice(itemIndex, 1);
+  localStorage.setItem("ideasSaved", JSON.stringify(parsedItems));
 }
 
-// deleteFromStorage() {
-  
-//     globalArray.splice(itemIndex, 1);
-//     localStorage.setItem("ideasSaved", JSON.stringify(globalArray));
-//   }
-// }
+}
