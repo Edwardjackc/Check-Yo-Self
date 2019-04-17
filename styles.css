@@ -1,24 +1,32 @@
 * {
   box-sizing: border-box;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
+
 /* ----- -------- Body ----------- */
+
 body {
   height:100vh;
+  display:grid;
+  grid-template-columns: 300px auto;
+  grid-template-rows: 80px 1fr;
   font-family:'Open Sans', sans-serif;
 }
+
 /* ------------- Header --------- */ 
+
 header {
   background-color: #1F1F3D;
-  display:flex;
+  grid-column:1/ span 2; 
+  grid-row: 1; 
   justify-content:space-between;
   font-family:Open Sans;
   font-weight: 800;
-  height:10%; 
+  display:flex
 }
 
 header input{
-  height:30px;
+  height:35px;
   width:220px;
   margin:20px 15px;
 }
@@ -35,9 +43,11 @@ span {
 
 /* ------------- Main ----------- */
 main {
-  display:flex;
+  /* display:flex; */
   height:100%;
   background-color:#f3f6f7;
+  width:100%;
+  grid-column:2
 }
 
 h3 {
@@ -46,7 +56,7 @@ h3 {
 }
 
 .list__section__container {
-  width:75%;
+  column-width: 13em; 
 }
 
 .inactive__card {
@@ -54,13 +64,17 @@ h3 {
   flex-flow: column;
   border:1px solid #c7d3d8;
   color:#1f1f3d;
-  width:300px;
+  width:40%;
   margin:20px;
 }
 
 .card__header {
   border-bottom:1px solid #c7d3d8;
-  height:30px;
+}
+
+.card__middle {
+  min-height:150px;
+  margin:10px;
 }
 
 .card__footer {
@@ -68,17 +82,19 @@ h3 {
   justify-content: space-between;
   height:30px;
   border-top: solid 1px #c7d3d8;
-  padding:4px
+  padding:4px;
+  width: 100%
 }
 
+.card__footer__images{
+  width:25px;
+  color:#3c6577;
+}
 /* ------------- Aside ---------- */
 aside {
   background-color:#59798B;
-  width:350px;
-}
-
-form{
-  margin:8px
+  padding:10px;
+  grid-column:1; 
 }
 
 label {
@@ -88,15 +104,24 @@ label {
   color: #c7d3d8;
 }
 
+.task__title__wrapper {
+  display:flex; 
+  justify-content:center;
+  height:35px;
+  margin-top:10px
+}
+
 .aside__form--input{
   display:flex;
   flex-direction:column;
-  margin-top:50px;
+  margin-top:20px;
+  
 }
 
 .input__aside--task {
-  height:30px;
+  height:40px;
   width:100%;
+  border:1px solid #1F1F3D
 }
 
 .input__task__item {
@@ -104,33 +129,74 @@ label {
 }
 
 .btn__aside__task--append {
-  height:30px;
+  height:40px;
   background-color:#1f1f3d
 }
 
 .btn__aside--task {
   background-color:#1f1f3d;
   color:#ffffff;
-  height:30px;
+  height:40px;
+  border: 1px solid #1F1F3D;
+  margin:10px 0px
+}
+.btn--list--filter {
+  margin-top:40px;
+  width:100%;
 }
 
-.task__p-input {
+.aside__bottom {
+  border-top:1px solid #1F1F3D
+}
+
+.insert__aside--text {
   color:#ffffff;
+  align-self: center;
+  color: #fff;
+  flex-flow: row;
+  font-size: 18px;
+  margin: 0px;
+  padding-left: 5px;
 }
 
-.task__item {
+.insert__aside--task {
   list-style-type: none;
   display:flex;
   width:20px;
+  margin:5px;
 }
 
-.task__title__wrapper {
-  display:flex; 
-  justify-content:center;
-  height:30px;
-  margin-top:10px
+.insert__aside--btn {
+  align-self: baseline;
+  flex-flow: row;
+  height: 26px;
+  margin-left: 7%;
+}
+
+.insert__aside__container {
+  margin-bottom:17px;
+  overflow:auto;
+}
+
+.list__section__container {
+  display:flex
 }
 
 .input__aside--title {
   width:100%;
+  border: 1px solid #1F1F3D;
+  height:40px;
+}
+
+.list__section__container {
+  flex-wrap:wrap;
+}
+
+.input__task__item {
+  width:100%;
+}
+
+.delete__card__item {
+  height:15px;
+  margin-right:5px;
 }

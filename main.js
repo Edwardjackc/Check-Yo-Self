@@ -1,25 +1,38 @@
+
+
+
+
 var taskTitleInput = document.querySelector('.input__aside--title');
 var taskInput = document.querySelector('.input__aside--task');
 var btnSubmitTask = document.querySelector('.btn__aside__task--append')
-var itemListContainer = document.querySelector('.item__container--to-do');
+var itemListContainer = document.querySelector('.insert__aside__container');
 var btnMakeList = document.querySelector('.btn--list--make');
 var btnClearAll = document.querySelector('.btn--list--clear');
 var filterUrgency = document.querySelector('.btn--list--filter');
 var listContainer = document.querySelector('.list__section__container');
 var inputForm = document.querySelector('.aside__form--input')
+var deleteItem = document.querySelector('.insert__aside__container')
+
 // titleInput.addEventListener();
 btnSubmitTask.addEventListener('click', appendListItems);
 btnMakeList.addEventListener('click',taskList);
 btnClearAll.addEventListener('click',clearInputsBtn);
+deleteItem.addEventListener('click', deleteAnItem)
+
 // filterUrgency.addEventListener('click', );
 window.addEventListener('load', pageReload);
 
 var globalArray = JSON.parse(localStorage.getItem('savedList')) || [];
+
+attachEvents();
 // function storeListInputs(id,title,urgent,tasks) {
 //   var listed = new ToDoList(Date.now(), titleInput.value, urgent,tasks.value );
 //   globalArray.push(listed)
 //   listed.saveToStorage(globalArray);
+
 // }
+// globalArray needs to have a function that makes ToDoListObjects as opposed to parsing...so that toDo methods are able to be used
+
 
 // function locateIndex(target) {
 //   var parent = target.closest('article');
@@ -28,15 +41,25 @@ var globalArray = JSON.parse(localStorage.getItem('savedList')) || [];
 //   return index;
 // }
 
+
 function locateIndex(e) {
-  var parent = e.target.closet('article');
+  var parent = e.target.closest('article');
   var parentId = parseInt(parent.dataset.id);
   var locatedIndex = globalArray.findIndex(function(list) {
-    list.id === parentId.id
+    return list.id === parentId
   })
   return locatedIndex
-}
+};
 
+function removeFromLocalStorage(e) {
+  persist();
+};
+
+function persist(){
+  var stringedTasks = JSON.stringify(globalArray);
+  localStorage.setItem(
+    'savedList', stringedTasks);
+}
 
 function toggleClearBtn() {
   if (taskTitle && taskTitleInput != '') {
@@ -48,34 +71,62 @@ function toggleClearBtn() {
 
 function clearInputsBtn(e) { 
   e.preventDefault();
-  inputForm.reset();
+  taskTitleInput.value = "";
+  itemListContainer.innerHTML = "";
+  taskInput.value = "";
   btnClearAll.setAttribute("enable","enable")
 };
 
-function removeCard(e) {
-  var locatedIndex = locateIndex();
-  if (e.target.className === "btn__card--delete") {
+// function removeCard() {
+//   deleteCardFromDom();
+//   deleteCardFromStorage();
+// }
+
+// function deleteCardFromDom() {
+// var clickedItem = e.target.closest('article');
+// clickedItem.remove();
+// }
+
+function deleteCardFromStorage(e) {
+  var locatedIndex = locateIndex(e);
+  if (e.target.closest('article')) {
   e.target.parentElement.parentElement.remove();
-  locatedIndex.deleteFromStorage(targetId)
+  globalArray.splice(locatedIndex, 1);
+  removeFromLocalStorage(e);
   }
 }
 
 
-// function pageReload() {
-//   console.log(globalArray)
-//   if (globalArray.length !== 0) {
-//     globalArray.forEach(function (item) {
-//       appendCard(item)
-//     })
-//   }
-// }
 function pageReload() {
+  document.querySelector('.list__section__container').innerHTML="";
   console.log(globalArray)
   if (globalArray.length !== 0) {
     globalArray.forEach(function (item) {
       appendCard(item);
     })
   }
+attachEvents();
+};
+
+function attachEvents(){
+  var deleteCard = document.querySelectorAll('.deletebutton')
+  if (deleteCard) {
+    for (var i=0; i< deleteCard.length; i++)
+    deleteCard[i].addEventListener('click', deleteCardFromStorage)
+  }
+  var urgentCard = document.querySelectorAll('.urgentbutton')
+  if (urgentCard) {
+    for (var i = 0; i < urgentCard.length; i++)
+    urgentCard[i].addEventListener('click', markAsUrgent);
+  }
+}
+
+function markAsUrgent(e) {
+  debugger;
+  var locatedIndex = locateIndex(e);
+  globalArray[locatedIndex].urgent ? globalArray[locatedIndex].urgent = false : globalArray[locatedIndex].urgent = true ;
+  persist();
+  pageReload();
 }
 
 function pageLoad() {
@@ -83,7 +134,7 @@ function pageLoad() {
   for (i = 0; i < globalArray.length; item++) {
     var list = new TodoList(globalArray[i].id,globalArray[i].title, globalArray[i].urgent, globalArray[i].task).push(list)
   }
-}
+};
 
 function makeList (taskArray) {
   if (taskTitleInput.value && taskInput.value) {
@@ -92,7 +143,7 @@ function makeList (taskArray) {
   initialList.saveToStorage(globalArray)
   appendCard(initialList)
   }
-}
+};
 
 function taskLoop(item){
   var string = ""
@@ -100,54 +151,57 @@ function taskLoop(item){
     string += `<p>${item.task[i].content}</p>`
   }
   return string 
-  }
+};
 
 function appendCard(item) {
   console.log(globalArray)
   listContainer.innerHTML =
-    `  <article class="inactive__card" data-id${item.id} >
+    `  <article class="inactive__card" data-id=${item.id} >
           <section class="card__header">
             <h3>${item.title}</h3>
           </section>
-            <ul>
-              <li>
-              <p class="item__form__list">${taskLoop(item)}
+          <section class="card__middle">
+              <p class="item__form__list"><input type="image" class="delete__card__item" src='images/checkbox.svg' ${taskLoop(item)}
               </p>
-              </li>
-            </ul>
+          </section>
           <section class="card__footer">
-            <input type="image" alt="button mark card urgent" src=${item.urgent === true ? 'images/urgent-active.svg' : 'images/urgent.svg'}  color="#3c6577">
-            <input type="image"class="btn__card--delete" alt="button delete card" src="images/delete.svg" width=15px color="#3c6577"
-            width=10px>
+            <input type="image"class="card__footer__images urgentbutton  alt="button mark card urgent" src=${item.urgent === true ? 'images/urgent-active.svg' : 'images/urgent.svg'}>
+            <input type="image"class="card__footer__images deletebutton" alt="button delete card" src="images/delete.svg">
           </section>
           </article>
       ` + listContainer.innerHTML;
-}
+};
 
 function appendListItems(e) {
   e.preventDefault(); 
   itemListContainer.innerHTML = 
-  ` <li class="task__item">
-      <img src='images/delete.svg'>
-      <p class="task__p-input">${taskInput.value}
+  ` <wrapper class="insert__aside--task">
+      <input type="image" class="insert__aside--btn delete-item" src='images/delete.svg' width=25px height=20px>
+      <p class="insert__aside--text">${taskInput.value}
       </p>
-    </li>
+    </wrapper>
   ` + itemListContainer.innerHTML;
-}
+};
+
+function deleteAnItem(e) {
+    e.preventDefault(e);
+    var clickedItem = e.target.closest('wrapper');
+    clickedItem.remove();
+};
 
 function taskList(e) {
   e.preventDefault();
   var tempArray = []
-  var allTaskOutputs = document.querySelectorAll('.task__p-input')
+  var allTaskOutputs = document.querySelectorAll('.insert__aside--text')
   for (var i = 0; i < allTaskOutputs.length; i++) {
     var taskObject = {
       id: Date.now(),
       content: allTaskOutputs[i].innerText
-  }
+    }
       tempArray.push(taskObject)
   }
   makeList(tempArray); 
-}
+};
 // conditional that stops an empty input  
 
 

@@ -13,29 +13,29 @@
       <h1>Check <span>YO'</span> Self </h1>
         <input type ="input__header" name="search" class="input__header--search"> 
     </header>
-    <main>
       <aside>
-
-        
+      <form class="aside__form--input">
         <label>Task Title</label>
         <wrapper class="task__title__wrapper">         
           <input type="text" class="input__aside--title " name="to-do" type="text">
         </wrapper>
-
-        
+      </form>
         <form class="aside__form--input">
+          <container class="insert__aside__container">
+          </container>
           <label>Task Item</label>
           <container class = "input__task__item">
             <input type="text" class="input__aside--task" name="to-do" type="text">
           <input type="image" class="btn__aside__task--append" name="to-do-task" src="images/plus.svg" width=25px>
           </container>
-          <ul class="item__container--to-do">
-          </ul>
           <button class="btn__aside--task btn--list--make">Make Task List</button>
           <button class="btn__aside--task btn--list--clear">Clear All</button>
           </form>
+          <container class = "input__task__item aside__bottom">
           <button class="btn__aside--task btn--list--filter">Filter by Urgency</button>
+          </container>
       </aside>
+    <main>
       <section class="list__section__container">
         <!-- <template> -->
           <!-- <article class="inactive__card">
