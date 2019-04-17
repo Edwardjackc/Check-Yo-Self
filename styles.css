@@ -112,7 +112,7 @@ label {
   margin-bottom:4px;
 }
 
-.task__title__wrapper {
+.aside__title__wrapper {
   display:flex; 
   height:35px;
   justify-content:center;
@@ -131,8 +131,9 @@ label {
   width:100%;
 }
 
-.input__task__item {
-  display:inline-flex 
+.input__task--item {
+  display:inline-flex;
+  width:100%;
 }
 
 .btn__aside__task--append {
@@ -147,7 +148,7 @@ label {
   height:40px;
   margin:10px 0px;
 }
-.btn--list--filter {
+.btn__list--filter {
   margin-top:40px;
   width:100%;
 }
@@ -197,10 +198,6 @@ label {
 
 .list__section__container {
   flex-wrap:wrap;
-}
-
-.input__task__item {
-  width:100%;
 }
 
 .delete__card__item {
