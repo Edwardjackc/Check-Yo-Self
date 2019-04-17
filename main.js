@@ -2,9 +2,9 @@ var taskTitleInput = document.querySelector('.input__aside--title');
 var taskInput = document.querySelector('.input__aside--task');
 var btnSubmitTask = document.querySelector('.btn__aside__task--append')
 var itemListContainer = document.querySelector('.insert__aside__container');
-var btnMakeList = document.querySelector('.btn--list--make');
-var btnClearAll = document.querySelector('.btn--list--clear');
-var filterUrgency = document.querySelector('.btn--list--filter');
+var btnMakeList = document.querySelector('.btn__list--make');
+var btnClearAll = document.querySelector('.btn__list--clear');
+var filterUrgency = document.querySelector('.btn__list--filter');
 var listContainer = document.querySelector('.list__section__container');
 var inputForm = document.querySelector('.aside__form--input')
 var deleteItem = document.querySelector('.insert__aside__container')
@@ -78,15 +78,15 @@ function attachEvents() {
   loopUrgent();
 };
 
-function attachEvents(){
+function loopDelete(){
   var deleteCard = document.querySelectorAll('.deletebutton')
   if (deleteCard) {
     for (var i=0; i< deleteCard.length; i++)
     deleteCard[i].addEventListener('click', deleteCardFromStorage)
   }
-};
+}
 
-function loopUrgent() {
+function loopUrgent(){
   var urgentCard = document.querySelectorAll('.urgentbutton')
   if (urgentCard) {
     for (var i = 0; i < urgentCard.length; i++)
@@ -110,7 +110,7 @@ function pageLoad() {
 
 function makeList (taskArray) {
   if (taskTitleInput.value && taskInput.value) {
-  var initialList = new ToDoList(Date.now(), taskTitleInput.value, false, taskArray);
+  var initialList = new ToDoList (Date.now(), taskTitleInput.value, false, taskArray);
   globalArray.push(initialList)
   initialList.saveToStorage(globalArray)
   appendCard(initialList)
